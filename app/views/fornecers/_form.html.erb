@@ -1,0 +1,22 @@
+<%= form_with(model: fornecer, local: true) do |form| %>
+  <% if fornecer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fornecer.errors.count, "error") %> prohibited this fornecer from being saved:</h2>
+
+      <ul>
+      <% fornecer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <div class="field">
+    <%= form.label :nome_fornecedor %>
+    <%= form.text_field :nome_fornecedor, id: :fornecer_nome_fornecedor %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

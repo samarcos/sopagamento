@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Fornecers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cod fornecedor</th>
+      <th>Nome fornecedor</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fornecers.each do |fornecer| %>
+      <tr>
+        <td><%= fornecer.cod_fornecedor %></td>
+        <td><%= fornecer.nome_fornecedor %></td>
+        <td><%= link_to 'Show', fornecer %></td>
+        <td><%= link_to 'Edit', edit_fornecer_path(fornecer) %></td>
+        <td><%= link_to 'Destroy', fornecer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fornecer', new_fornecer_path %>
